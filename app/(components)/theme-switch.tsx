@@ -12,6 +12,7 @@ export function ThemeSwitch() {
   return (
     <ToggleGroup
       variant="outline"
+      size="sm"
       type="single"
       onValueChange={setTheme}
       defaultValue="system"
