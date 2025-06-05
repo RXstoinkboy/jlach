@@ -5,7 +5,6 @@ import { Navigation } from "./(components)/navigation";
 import { ContactForm } from "./(components)/contact-form";
 import { ContactBar } from "./(components)/contact";
 import { Copyright } from "./(components)/copyright";
-import { Separator } from "@radix-ui/react-separator";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -18,7 +17,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Jerzy Lach",
+  title: process.env.NEXT_PUBLIC_FULL_NAME,
 };
 
 export default function RootLayout({
