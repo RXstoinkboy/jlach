@@ -31,7 +31,7 @@ export default function RootLayout({
         id="home"
         className={`${geistSans.variable} ${geistMono.variable} antialiased h-screen flex flex-col items-center overflow-auto`}
       >
-        <header className="flex fixed w-svw top-0 backdrop-blur-sm bg-white/75 border-b-1 border-accent">
+        <header className="justify-center flex fixed w-svw top-0 backdrop-blur-sm bg-white/75 border-b-1 border-accent">
           <div className="flex max-w-7xl justify-between items-center p-4 flex-1">
             <div className="h-14 w-24 bg-primary"></div>
             <Navigation />

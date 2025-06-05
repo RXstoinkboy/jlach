@@ -10,6 +10,7 @@ import { NavigationMenuList } from "@/components/ui/navigation-menu";
 import { NavigationMenu } from "@/components/ui/navigation-menu";
 import { menuItems } from "./options";
 import Link from "next/link";
+import { cn } from "@/lib/utils";
 
 export const Desktop = () => {
   return (
@@ -19,7 +20,10 @@ export const Desktop = () => {
           <NavigationMenuItem key={item.href}>
             <NavigationMenuLink
               asChild
-              className={navigationMenuTriggerStyle()}
+              className={cn(
+                navigationMenuTriggerStyle(),
+                "text-md bg-transparent"
+              )}
             >
               <Link href={item.href}>{item.label}</Link>
             </NavigationMenuLink>
