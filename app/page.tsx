@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <>
       <Hero />
-      <section className="flex flex-col gap-16 w-full max-w-7xl">
+      <section className="flex flex-col gap-8 sm:gap-16 w-full max-w-7xl p-2 sm:p-0">
         <InfoSection id="about">
           <InfoSection.Content title="O mnie">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam,

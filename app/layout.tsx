@@ -5,6 +5,7 @@ import { Navigation } from "./(components)/navigation";
 import { ContactForm } from "./(components)/contact-form";
 import { ContactBar } from "./(components)/contact";
 import { Copyright } from "./(components)/copyright";
+import { ThemeProvider } from "@/components/theme-provider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -31,18 +32,25 @@ export default function RootLayout({
         id="home"
         className={`${geistSans.variable} ${geistMono.variable} antialiased h-screen flex flex-col items-center overflow-auto`}
       >
-        <header className="justify-center flex fixed w-svw top-0 backdrop-blur-sm bg-white/75 border-b-1 border-accent">
-          <div className="flex max-w-7xl justify-between items-center p-4 flex-1">
-            <div className="h-14 w-24 bg-primary"></div>
-            <Navigation />
-          </div>
-        </header>
-        <main>{children}</main>
-        <footer className="w-full max-w-7xl">
-          <ContactBar />
-          <ContactForm />
-          <Copyright />
-        </footer>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <header className="justify-center flex fixed w-svw top-0 backdrop-blur-sm bg-background/75 border-b-1 border-accent">
+            <div className="flex max-w-7xl justify-between items-center px-4 sm:p-4 flex-1">
+              <div className="h-14 w-24 bg-primary"></div>
+              <Navigation />
+            </div>
+          </header>
+          <main>{children}</main>
+          <footer className="w-full max-w-7xl">
+            <ContactBar />
+            <ContactForm />
+            <Copyright />
+          </footer>
+        </ThemeProvider>
       </body>
     </html>
   );

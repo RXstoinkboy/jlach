@@ -30,7 +30,11 @@ type InfoSectionImageProps = {
 
 const InfoSectionImage: FC<InfoSectionImageProps> = ({ src, alt }) => {
   return (
-    <Image className="rounded-md object-cover max-w-1/2" src={src} alt={alt} />
+    <Image
+      className="object-cover sm:max-w-1/2 max-sm:-order-1"
+      src={src}
+      alt={alt}
+    />
   );
 };
 
@@ -47,7 +51,7 @@ export type InfoSectionComponent = FC<InfoSectionProps> & {
 export const InfoSection: InfoSectionComponent = ({ children, id }) => {
   return (
     <Card>
-      <CardContent className="flex" id={id}>
+      <CardContent className="flex gap-6 flex-col sm:flex-row" id={id}>
         {children}
       </CardContent>
     </Card>
