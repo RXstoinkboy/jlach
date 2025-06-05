@@ -15,7 +15,7 @@ const InfoSectionContent: FC<InfoSectionContentProps> = ({
   title,
 }) => {
   return (
-    <article className="flex flex-col gap-4">
+    <article className="flex flex-col gap-4 p-6">
       <h2 className="text-3xl font-bold text-center">{title}</h2>
       <p className="text-md">{children}</p>
       {onClick ? <Button onClick={onClick}>Read more</Button> : null}
@@ -50,8 +50,8 @@ export type InfoSectionComponent = FC<InfoSectionProps> & {
 
 export const InfoSection: InfoSectionComponent = ({ children, id }) => {
   return (
-    <Card>
-      <CardContent className="flex gap-6 flex-col sm:flex-row" id={id}>
+    <Card className="p-0 overflow-hidden">
+      <CardContent className="flex flex-col sm:flex-row p-0" id={id}>
         {children}
       </CardContent>
     </Card>
