@@ -1,5 +1,5 @@
-import { Hero } from "./(components)/hero";
-import { InfoSection } from "./(components)/info-section";
+import { Hero } from "../(components)/hero";
+import { InfoSection } from "../(components)/info-section";
 import agremeentImage from "@/public/agreement.jpg";
 import familyImage from "@/public/family.jpg";
 
