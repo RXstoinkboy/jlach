@@ -2,31 +2,40 @@ import { Facebook, Mail, Phone } from "lucide-react";
 
 export const ContactBar = () => {
   return (
-    <section id="contact">
-      <ul className="flex gap-2">
-        <li>
+    <section className="flex-1 flex items-center">
+      <ul className="flex flex-col gap-4 pl-8">
+        <li className="flex gap-2">
+          <span className="flex items-center gap-2 font-bold">
+            <Mail />
+            Email:
+          </span>
           <a
             className="flex items-center gap-2"
             href={`mailto:${process.env.NEXT_PUBLIC_EMAIL}`}
           >
-            <Mail />
             {process.env.NEXT_PUBLIC_EMAIL}
           </a>
         </li>
-        <li>
+        <li className="flex gap-2">
+          <span className="flex items-center gap-2 font-bold">
+            <Phone />
+            Telefon:
+          </span>
           <a
             className="flex items-center gap-2"
             type="tel"
             href={`tel:${process.env.NEXT_PUBLIC_PHONE_NUMBER_FULL}`}
           >
-            <Phone />
-
             {process.env.NEXT_PUBLIC_PHONE_NUMBER}
           </a>
         </li>
         <li>
-          <a href={process.env.NEXT_PUBLIC_FACEBOOK}>
+          <a
+            className="flex items-center gap-2 font-bold"
+            href={process.env.NEXT_PUBLIC_FACEBOOK}
+          >
             <Facebook />
+            Facebook
           </a>
         </li>
       </ul>

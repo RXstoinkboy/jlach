@@ -45,9 +45,12 @@ export default function RootLayout({
             </div>
           </header>
           <main>{children}</main>
-          <footer className="w-full max-w-7xl">
-            <ContactBar />
-            <ContactForm />
+          <footer className="w-full max-w-7xl flex flex-col gap-4 items-center py-4">
+            <h3 className="text-3xl font-bold">Kontakt</h3>
+            <section className="flex justify-center w-full">
+              <ContactForm />
+              <ContactBar />
+            </section>
             <Copyright />
           </footer>
         </ThemeProvider>
