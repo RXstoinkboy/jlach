@@ -17,6 +17,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { RefObject, useRef } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { z } from "zod";
 
@@ -26,7 +27,11 @@ const formSchema = z.object({
   message: z.string().min(1),
 });
 
-export const ContactForm = () => {
+type ContactFormProps = {
+  nameInputRef: RefObject<HTMLInputElement | null>;
+};
+
+export const ContactForm = ({ nameInputRef }: ContactFormProps) => {
   const form = useForm({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -41,8 +46,8 @@ export const ContactForm = () => {
   };
 
   return (
-    <div className="flex-1 flex justify-end">
-      <Card className="min-w-md">
+    <div className="flex-1 flex justify-center md:justify-end">
+      <Card className="min-w-full lg:min-w-md">
         <Form {...form}>
           <CardContent>
             <form
@@ -56,7 +61,11 @@ export const ContactForm = () => {
                   <FormItem>
                     <FormLabel>Imię i nazwisko:</FormLabel>
                     <FormControl>
-                      <Input {...field} placeholder="Jan Nowak" />
+                      <Input
+                        {...field}
+                        placeholder="Jan Nowak"
+                        ref={nameInputRef}
+                      />
                     </FormControl>
                   </FormItem>
                 )}

@@ -33,9 +33,7 @@ export const Mobile = () => {
       <DrawerContent className="bg-transparent border-none">
         <div className="flex flex-col overflow-auto m-2 p-6 rounded-md bg-card h-full shadow-md justify-between">
           <div>
-            <DrawerTitle className="pl-4 text-neutral-400">
-              Navigation
-            </DrawerTitle>
+            <DrawerTitle className="pl-4 text-neutral-400">Menu</DrawerTitle>
             <div className="flex flex-col space-y-1">
               {menuItems.map(
                 (item) =>
