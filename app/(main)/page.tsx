@@ -1,4 +1,4 @@
-import { Hero } from "../(components)/hero";
+import { Hero } from "../(hero)/hero";
 import { InfoSection } from "../(components)/info-section";
 import agremeentImage from "@/public/agreement.jpg";
 import familyImage from "@/public/family.jpg";

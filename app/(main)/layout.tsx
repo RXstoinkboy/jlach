@@ -22,7 +22,7 @@ export default function RootLayout({
   return (
     <FocusContext.Provider value={{ focusNameInput }}>
       <header className="justify-center flex fixed w-svw top-0 backdrop-blur-sm bg-background/75 border-b-1 border-accent">
-        <div className="flex max-w-7xl justify-between items-center px-4 sm:p-4 flex-1">
+        <div className="flex justify-between items-center px-4 sm:p-4 flex-1 h-20">
           <Logo />
           <Navigation />
         </div>
