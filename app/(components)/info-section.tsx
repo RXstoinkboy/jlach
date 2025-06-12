@@ -1,7 +1,6 @@
 import { Button } from "@/components/ui/button";
 import type { FC, ReactNode } from "react";
 import Image, { ImageProps } from "next/image";
-import { Card, CardContent } from "@/components/ui/card";
 
 type InfoSectionContentProps = {
   onClick?: () => void;
@@ -50,11 +49,9 @@ export type InfoSectionComponent = FC<InfoSectionProps> & {
 
 export const InfoSection: InfoSectionComponent = ({ children, id }) => {
   return (
-    <Card className="p-0 overflow-hidden">
-      <CardContent className="flex flex-col sm:flex-row p-0" id={id}>
-        {children}
-      </CardContent>
-    </Card>
+    <section className="flex flex-col sm:flex-row p-0" id={id}>
+      {children}
+    </section>
   );
 };
 
