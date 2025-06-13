@@ -102,7 +102,7 @@ export const ContactForm = ({ nameInputRef }: ContactFormProps) => {
           </CardContent>
           <CardFooter>
             <Button className="w-full" type="submit">
-              Submit
+              Wyślij wiadomość
             </Button>
           </CardFooter>
         </Form>

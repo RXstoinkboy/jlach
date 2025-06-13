@@ -1,31 +1,26 @@
 "use client";
 
-import * as React from "react";
-import { Computer, Moon, Sun } from "lucide-react";
+import { Moon, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
 
-import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
+import { Button } from "@/components/ui/button";
 
 export function ThemeSwitch() {
-  const { setTheme } = useTheme();
+  const { setTheme, resolvedTheme } = useTheme();
 
   return (
-    <ToggleGroup
-      variant="outline"
+    <Button
+      variant="ghost"
       size="sm"
-      type="single"
-      onValueChange={setTheme}
+      onClick={() => setTheme(resolvedTheme === "light" ? "dark" : "light")}
       defaultValue="system"
+      aria-label={resolvedTheme === "light" ? "Toggle light" : "Toggle dark"}
     >
-      <ToggleGroupItem value="light" aria-label="Toggle light">
+      {resolvedTheme === "light" ? (
         <Sun className="h-4 w-4" />
-      </ToggleGroupItem>
-      <ToggleGroupItem value="dark" aria-label="Toggle dark">
+      ) : (
         <Moon className="h-4 w-4" />
-      </ToggleGroupItem>
-      <ToggleGroupItem value="system" aria-label="Toggle system">
-        <Computer className="h-4 w-4" />
-      </ToggleGroupItem>
-    </ToggleGroup>
+      )}
+    </Button>
   );
 }
