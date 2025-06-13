@@ -13,7 +13,7 @@ const InfoSectionContent: FC<InfoSectionContentProps> = ({
 }) => {
   return (
     <article className="flex flex-col">
-      <p className="text-md">{children}</p>
+      <div className="text-md">{children}</div>
       {onClick ? <Button onClick={onClick}>Read more</Button> : null}
     </article>
   );
