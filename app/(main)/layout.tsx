@@ -21,13 +21,13 @@ export default function RootLayout({
 
   return (
     <FocusContext.Provider value={{ focusNameInput }}>
-      <header className="justify-center flex fixed w-svw top-0 backdrop-blur-sm bg-background/75 border-b-1 border-accent z-10">
+      <header className="justify-center flex fixed w-svw top-0 backdrop-blur-sm bg-background/75 border-b-1 border-border z-10">
         <div className="flex justify-between items-center px-4 sm:p-4 flex-1 h-20">
           <Logo />
           <Navigation />
         </div>
       </header>
-      <main>{children}</main>
+      <main className="w-full flex flex-col justify-center">{children}</main>
       <footer className="w-full max-w-7xl flex flex-col gap-4 items-center py-4">
         <h3 className="text-3xl font-bold">Kontakt</h3>
         <section className="p-2 flex flex-col sm:flex-row justify-center w-full gap-8">

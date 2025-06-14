@@ -8,7 +8,7 @@ export const Hero = () => {
   const { focusNameInput } = useFocus();
 
   return (
-    <section className="flex h-screen w-full justify-center items-center bg-secondary pt-20">
+    <section className="flex h-screen w-full justify-center items-center bg-accent pt-20">
       <div className="flex flex-1 sm:h-[80vh] w-full max-w-7xl items-center">
         <article className="flex flex-1 flex-col gap-2 max-w-6xl justify-start p-4">
           <h2 className="text-2xl font-semibold text-center sm:text-left">

@@ -14,7 +14,7 @@ export default function Home() {
   return (
     <>
       <Hero />
-      <section className="flex flex-col gap-4 sm:gap-8 w-full max-w-7xl p-2 sm:p-0 mt-8">
+      <section className="flex flex-col gap-4 sm:gap-8 w-full max-w-7xl p-2 sm:p-0 mt-8 mx-auto">
         <InfoSection id="why-me">
           <InfoSection.Title>
             Dlaczego warto ze mną współpracować
