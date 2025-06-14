@@ -12,8 +12,8 @@ const InfoSectionContent: FC<InfoSectionContentProps> = ({
   onClick,
 }) => {
   return (
-    <article className="flex flex-col">
-      <div className="text-md">{children}</div>
+    <article className="flex flex-col sm:py-4">
+      <div className="flex gap-4">{children}</div>
       {onClick ? <Button onClick={onClick}>Read more</Button> : null}
     </article>
   );
@@ -26,11 +26,13 @@ type InfoSectionImageProps = {
 
 const InfoSectionImage: FC<InfoSectionImageProps> = ({ src, alt }) => {
   return (
-    <Image
-      className="object-cover sm:max-w-1/2 max-sm:-order-1"
-      src={src}
-      alt={alt}
-    />
+    <div className="h-full max-sm:-order-1 sm:max-w-2/5 rounded-2xl overflow-hidden">
+      <Image
+        className="h-full object-cover object-center"
+        src={src}
+        alt={alt}
+      />
+    </div>
   );
 };
 
@@ -52,6 +54,18 @@ const Subtitle: FC<SubititleProps> = ({ children }) => {
   );
 };
 
+type InfoSectionBodyProps = {
+  children: ReactNode;
+};
+
+const Body: FC<InfoSectionBodyProps> = ({ children }) => {
+  return (
+    <div className="flex flex-col sm:flex-row gap-6 justify-evenly items-start">
+      {children}
+    </div>
+  );
+};
+
 type InfoSectionProps = {
   children: ReactNode;
   id?: string;
@@ -60,6 +74,7 @@ type InfoSectionProps = {
 export type InfoSectionComponent = FC<InfoSectionProps> & {
   Image: FC<InfoSectionImageProps>;
   Content: FC<InfoSectionContentProps>;
+  Body: FC<InfoSectionBodyProps>;
   Title: FC<TitleProps>;
   Subtitle: FC<SubititleProps>;
 };
@@ -76,3 +91,4 @@ InfoSection.Image = InfoSectionImage;
 InfoSection.Title = Title;
 InfoSection.Subtitle = Subtitle;
 InfoSection.Content = InfoSectionContent;
+InfoSection.Body = Body;
