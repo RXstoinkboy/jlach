@@ -8,9 +8,9 @@ export const Hero = () => {
   const { focusNameInput } = useFocus();
 
   return (
-    <section className="flex h-screen w-full justify-center items-center bg-accent pt-20">
-      <div className="flex flex-1 sm:h-[80vh] w-full max-w-7xl items-center">
-        <article className="flex flex-1 flex-col gap-2 max-w-6xl justify-start p-4">
+    <section className="flex min-h-screen w-full justify-center items-center bg-accent pt-20">
+      <div className="flex flex-1 w-full max-w-7xl items-center flex-col md:flex-row gap-14 sm:gap-0">
+        <article className="flex flex-1 flex-col gap-2 max-w-6xl justify-start p-4 pt-24 sm:pt-4">
           <h2 className="text-2xl font-semibold text-center sm:text-left">
             Twój agent ubezpieczeniowy
           </h2>
@@ -30,7 +30,7 @@ export const Hero = () => {
             Umów kontakt
           </Button>
         </article>
-        <aside className="flex-1 p-5">
+        <aside className="flex-1 p-5 w-10/12 md:w-full">
           <HeroImage />
         </aside>
       </div>
