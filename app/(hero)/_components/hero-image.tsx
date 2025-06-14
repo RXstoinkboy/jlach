@@ -7,8 +7,9 @@ export const HeroImage = () => {
     <div className="relative">
       <AspectRatio
         ratio={1}
-        className="rounded-l-full rounded-br-full overflow-hidden"
+        className="rounded-l-full rounded-br-full overflow-hidden relative"
       >
+        <div className="absolute top-0 left-0 w-full h-full" />
         <Image
           src={Photo}
           alt="Hero Image"

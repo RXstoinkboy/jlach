@@ -26,7 +26,8 @@ type InfoSectionImageProps = {
 
 const InfoSectionImage: FC<InfoSectionImageProps> = ({ src, alt }) => {
   return (
-    <div className="info-section-image h-full max-sm:-order-1 sm:max-w-2/5 rounded-2xl overflow-hidden">
+    <div className="info-section-image h-full max-sm:-order-1 sm:max-w-2/5 rounded-2xl overflow-hidden relative">
+      <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-primary/40 to-background/50" />
       <Image
         className="h-full object-cover object-center"
         src={src}
