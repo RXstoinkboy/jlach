@@ -12,7 +12,7 @@ const InfoSectionContent: FC<InfoSectionContentProps> = ({
   onClick,
 }) => {
   return (
-    <article className="flex flex-col sm:py-4">
+    <article className="info-section-content flex flex-col sm:py-4">
       <div className="flex gap-4">{children}</div>
       {onClick ? <Button onClick={onClick}>Read more</Button> : null}
     </article>
@@ -26,7 +26,7 @@ type InfoSectionImageProps = {
 
 const InfoSectionImage: FC<InfoSectionImageProps> = ({ src, alt }) => {
   return (
-    <div className="h-full max-sm:-order-1 sm:max-w-2/5 rounded-2xl overflow-hidden">
+    <div className="info-section-image h-full max-sm:-order-1 sm:max-w-2/5 rounded-2xl overflow-hidden">
       <Image
         className="h-full object-cover object-center"
         src={src}

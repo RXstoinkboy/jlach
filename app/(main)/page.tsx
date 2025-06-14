@@ -127,7 +127,7 @@ export default function Home() {
           <InfoSection.Subtitle>Prosty proces</InfoSection.Subtitle>
           <InfoSection.Body>
             <InfoSection.Content>
-              <ol className="flex flex-col gap-3 pt-5 pl-10">
+              <ol className="flex flex-col gap-3 pl-10">
                 <li className="list-decimal font-semibold marker:text-4xl text-primary">
                   <h4 className="text-foreground text-lg">
                     Konsultacja i analiza potrzeb
