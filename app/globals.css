@@ -159,4 +159,9 @@
   body {
     @apply bg-background text-foreground;
   }
+
+  /* Add scroll margin to sections */
+  section[id] {
+    scroll-margin-top: 5rem;
+  }
 }
