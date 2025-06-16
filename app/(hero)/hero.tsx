@@ -12,7 +12,7 @@ export const Hero = () => {
       <HeroImage className="block md:hidden absolute inset-0 max-md:rounded-none" />
       <div className="absolute inset-0 md:static flex justify-center md:justify-end flex-1 w-full md:flex-row gap-14 md:gap-0 bg-accent/20 md:pt-20">
         <article className="flex h-full w-full max-w-[30rem] md:max-w-[40rem] flex-col gap-6 max-md:pb-20 justify-end md:justify-center p-4 pt-24 md:pt-4">
-          <div className="flex flex-col gap-6 backdrop-blur-sm bg-accent/10 p-2 py-6 rounded-xl">
+          <div className="flex flex-col gap-6 backdrop-blur-sm max-md:bg-accent/10 p-2 py-6 rounded-xl">
             <h2 className="text-xl font-semibold text-center md:text-left md:text-muted-foreground">
               Twój agent ubezpieczeniowy
             </h2>
