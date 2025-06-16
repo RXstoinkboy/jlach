@@ -50,7 +50,7 @@ export default function RootLayout({
       <main className="w-full flex flex-col justify-center">{children}</main>
       <footer className="w-full max-w-7xl flex flex-col gap-4 items-center py-4">
         <h3 className="text-3xl font-bold">Kontakt</h3>
-        <section className="p-2 flex flex-col sm:flex-row justify-center w-full gap-6">
+        <section className="flex flex-col sm:flex-row justify-center w-full gap-6 p-4">
           <ContactForm nameInputRef={nameInputRef} />
           <ContactBar />
         </section>

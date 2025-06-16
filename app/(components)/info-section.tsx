@@ -82,7 +82,7 @@ export type InfoSectionComponent = FC<InfoSectionProps> & {
 
 export const InfoSection: InfoSectionComponent = ({ children, id }) => {
   return (
-    <section className="flex flex-col gap-6 px-4 py-4" id={id}>
+    <section className="flex flex-col gap-6 p-4" id={id}>
       {children}
     </section>
   );
