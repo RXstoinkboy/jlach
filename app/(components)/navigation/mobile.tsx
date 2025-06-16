@@ -24,7 +24,7 @@ export const Mobile = () => {
       <DrawerTrigger asChild>
         <Button
           variant="ghost"
-          className="h-full w-full gap-2 px-0 hover:bg-transparent focus-visible:bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 md:hidden justify-end"
+          className="h-full gap-2 px-0 hover:bg-transparent focus-visible:bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 md:hidden justify-end"
         >
           <MenuIcon className="size-7" />
           <span className="sr-only">Toggle Menu</span>

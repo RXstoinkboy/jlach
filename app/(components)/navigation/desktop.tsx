@@ -15,7 +15,7 @@ import { ThemeSwitch } from "../theme-switch";
 
 export const Desktop = () => {
   return (
-    <div className="items-center gap-2 hidden md:flex max-w-7xl">
+    <div className="items-center gap-2 hidden md:flex">
       <ThemeSwitch />
       <NavigationMenu>
         <NavigationMenuList>

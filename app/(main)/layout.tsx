@@ -5,8 +5,9 @@ import { ContactForm } from "../(components)/contact-form/contact-form";
 import { ContactBar } from "../(components)/contact";
 import { Copyright } from "../(components)/copyright";
 import { Logo } from "../(components)/logo";
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { FocusContext } from "../(components)/contact-form/focus-context";
+import { cn } from "@/lib/utils";
 
 export default function RootLayout({
   children,
@@ -19,10 +20,29 @@ export default function RootLayout({
     nameInputRef.current?.focus();
   };
 
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 0);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <FocusContext.Provider value={{ focusNameInput }}>
-      <header className="justify-center flex fixed w-svw top-0 backdrop-blur-sm bg-background/75 border-b-1 border-border z-10">
-        <div className="flex justify-between items-center px-4 sm:p-4 flex-1 h-20">
+      <header
+        className={cn(
+          "justify-center flex fixed w-svw top-0 z-10 transition-all",
+          isScrolled && "backdrop-blur-sm bg-background/50 border-b-1"
+        )}
+      >
+        <div className="flex justify-between items-center px-4 sm:p-4 flex-1 h-20 max-w-7xl">
           <Logo />
           <Navigation />
         </div>
