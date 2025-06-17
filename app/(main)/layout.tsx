@@ -48,7 +48,10 @@ export default function RootLayout({
         </div>
       </header>
       <main className="w-full flex flex-col justify-center">{children}</main>
-      <footer className="w-full max-w-7xl flex flex-col gap-4 items-center py-4">
+      <footer
+        className="w-full max-w-7xl flex flex-col gap-4 items-center py-4"
+        id="contact"
+      >
         <h3 className="text-3xl font-bold">Kontakt</h3>
         <section className="flex flex-col sm:flex-row justify-center w-full gap-6 p-4">
           <ContactForm nameInputRef={nameInputRef} />

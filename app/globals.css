@@ -154,14 +154,13 @@
 @layer base {
   * {
     @apply border-border outline-ring/50;
-    scroll-behavior: smooth;
   }
   body {
     @apply bg-background text-foreground;
   }
 
-  /* Add scroll margin to sections */
-  section[id] {
+  /* Add scroll margin to sections and footer */
+  section[id], footer[id] {
     scroll-margin-top: 5rem;
   }
 }

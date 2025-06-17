@@ -2,7 +2,7 @@ import { Separator } from "@/components/ui/separator";
 
 export const Copyright = () => {
   return (
-    <section className="flex justify-end items-center w-full gap-3 text-neutral-500">
+    <section className="flex justify-end items-center w-full gap-3 text-neutral-500 px-4">
       <p className="text-xs">Copyright {new Date().getFullYear()}</p>
       <Separator orientation="vertical" />
       <p className="text-xs">

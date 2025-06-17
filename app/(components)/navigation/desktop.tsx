@@ -9,7 +9,6 @@ import { NavigationMenuList } from "@/components/ui/navigation-menu";
 
 import { NavigationMenu } from "@/components/ui/navigation-menu";
 import { menuItems } from "./options";
-import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { ThemeSwitch } from "../theme-switch";
 
@@ -28,7 +27,7 @@ export const Desktop = () => {
                   "text-md bg-transparent"
                 )}
               >
-                <Link href={item.href}>{item.label}</Link>
+                <a href={item.href}>{item.label}</a>
               </NavigationMenuLink>
             </NavigationMenuItem>
           ))}
