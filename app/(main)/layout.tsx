@@ -27,6 +27,8 @@ export default function RootLayout({
       setIsScrolled(window.scrollY > 0);
     };
 
+    setIsScrolled(window.scrollY > 0);
+
     window.addEventListener("scroll", handleScroll);
 
     return () => {
@@ -38,8 +40,8 @@ export default function RootLayout({
     <FocusContext.Provider value={{ focusNameInput }}>
       <header
         className={cn(
-          "justify-center flex fixed w-svw top-0 z-10 transition-all",
-          isScrolled && "backdrop-blur-sm bg-background/50 border-b-1"
+          "justify-center flex fixed w-svw top-0 z-10 transition-all border-b-1 border-transparent",
+          isScrolled && "backdrop-blur-sm bg-background/50 border-border"
         )}
       >
         <div className="flex justify-between items-center px-4 sm:p-4 flex-1 h-20 max-w-7xl">
@@ -48,7 +50,10 @@ export default function RootLayout({
         </div>
       </header>
       <main className="w-full flex flex-col justify-center">{children}</main>
-      <footer className="w-full max-w-7xl flex flex-col gap-4 items-center py-4">
+      <footer
+        className="w-full max-w-7xl flex flex-col gap-4 items-center py-4"
+        id="contact"
+      >
         <h3 className="text-3xl font-bold">Kontakt</h3>
         <section className="flex flex-col sm:flex-row justify-center w-full gap-6 p-4">
           <ContactForm nameInputRef={nameInputRef} />

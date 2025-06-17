@@ -9,18 +9,20 @@ import {
 } from "@/components/ui/drawer";
 import { cn } from "@/lib/utils";
 import { MenuIcon } from "lucide-react";
-import { LinkProps } from "next/link";
-import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { menuItems } from "./options";
-import Link from "next/link";
 import { ThemeSwitch } from "../theme-switch";
 
 export const Mobile = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <Drawer open={isOpen} onOpenChange={setIsOpen} direction="right">
+    <Drawer
+      open={isOpen}
+      onOpenChange={setIsOpen}
+      direction="right"
+      disablePreventScroll
+    >
       <DrawerTrigger asChild>
         <Button
           variant="ghost"
@@ -58,7 +60,8 @@ export const Mobile = () => {
   );
 };
 
-interface MobileLinkProps extends LinkProps {
+interface MobileLinkProps {
+  href: string;
   onOpenChange?: (open: boolean) => void;
   children: React.ReactNode;
   className?: string;
@@ -71,21 +74,23 @@ function MobileLink({
   children,
   ...props
 }: MobileLinkProps) {
-  const router = useRouter();
-
   return (
     <Button variant="ghost" asChild className="w-full justify-start">
-      <Link
-        href={href}
-        onClick={() => {
-          router.push(href.toString());
+      <a
+        // href={href}
+        onClick={(e) => {
+          e.preventDefault();
           onOpenChange?.(false);
+          // Navigate after drawer closes
+          setTimeout(() => {
+            window.location.href = href;
+          }, 300);
         }}
         className={cn("text-xl py-6", className)}
         {...props}
       >
         {children}
-      </Link>
+      </a>
     </Button>
   );
 }
