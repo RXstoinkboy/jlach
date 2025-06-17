@@ -38,8 +38,8 @@ export default function RootLayout({
     <FocusContext.Provider value={{ focusNameInput }}>
       <header
         className={cn(
-          "justify-center flex fixed w-svw top-0 z-10 transition-all",
-          isScrolled && "backdrop-blur-sm bg-background/50 border-b-1"
+          "justify-center flex fixed w-svw top-0 z-10 transition-all border-b-1 border-transparent",
+          isScrolled && "backdrop-blur-sm bg-background/50 border-border"
         )}
       >
         <div className="flex justify-between items-center px-4 sm:p-4 flex-1 h-20 max-w-7xl">
