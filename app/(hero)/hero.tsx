@@ -3,6 +3,7 @@
 import { Button } from "@/components/ui/button";
 import { useFocus } from "../(components)/contact-form/focus-context";
 import { HeroImage } from "./_components/hero-image";
+import { Suspense } from "react";
 
 export const Hero = () => {
   const { focusNameInput } = useFocus();
