@@ -24,10 +24,16 @@ export default function RootLayout({
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 0);
+      setIsScrolled(() => {
+        if (window.scrollY > 20) {
+          window.removeEventListener("scroll", handleScroll);
+          return true;
+        }
+        return false;
+      });
     };
 
-    setIsScrolled(window.scrollY > 0);
+    handleScroll();
 
     window.addEventListener("scroll", handleScroll);
 
