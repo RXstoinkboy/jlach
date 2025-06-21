@@ -8,6 +8,8 @@ export const HeroImage = ({ className }: { className?: string }) => {
       className={cn("h-full relative rounded-2xl overflow-hidden", className)}
     >
       <Image
+        priority
+        placeholder="blur"
         src={Photo}
         alt="Hero Image"
         className="w-full h-full object-cover object-top md:object-center"
