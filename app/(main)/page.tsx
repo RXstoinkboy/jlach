@@ -1,3 +1,5 @@
+"use client";
+
 import { Hero } from "../(hero)/hero";
 import { InfoSection } from "../(components)/info-section";
 import { Building2, Car, Check, HeartPulse, House, Plane } from "lucide-react";
@@ -5,6 +7,8 @@ import { Separator } from "@/components/ui/separator";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import FamilyImage from "@/public/family.jpg";
 import AgreementImage from "@/public/agreement.jpg";
+import { motion } from "motion/react";
+import { childVariants, STAGGER_CHILDREN_TIME } from "../_constants/animation";
 
 export default function Home() {
   return (
@@ -51,8 +55,26 @@ export default function Home() {
           </InfoSection.Subtitle>
           <InfoSection.Body>
             <InfoSection.Content>
-              <ol className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 auto-rows-fr">
-                <li className="h-full">
+              <motion.ol
+                initial="hidden"
+                whileInView="visible"
+                viewport={{
+                  once: true,
+                }}
+                variants={{
+                  hidden: {},
+                  visible: {
+                    transition: {
+                      staggerChildren: STAGGER_CHILDREN_TIME,
+                    },
+                  },
+                }}
+                className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 auto-rows-fr"
+              >
+                <motion.li
+                  className="h-full"
+                  variants={childVariants("y", "+")}
+                >
                   <Card className="h-full">
                     <CardHeader>
                       <CardTitle className="flex gap-3 items-center">
@@ -64,9 +86,12 @@ export default function Home() {
                       zdarzeń.
                     </CardContent>
                   </Card>
-                </li>
+                </motion.li>
 
-                <li className="h-full">
+                <motion.li
+                  className="h-full"
+                  variants={childVariants("y", "+")}
+                >
                   <Card className="h-full">
                     <CardHeader>
                       <CardTitle className="flex gap-3 items-center">
@@ -77,9 +102,12 @@ export default function Home() {
                       Zabezpiecz swój majątek przed ogniem, zalaniem, kradzieżą.
                     </CardContent>
                   </Card>
-                </li>
+                </motion.li>
 
-                <li className="h-full">
+                <motion.li
+                  className="h-full"
+                  variants={childVariants("y", "+")}
+                >
                   <Card className="h-full">
                     <CardHeader>
                       <CardTitle className="flex gap-3 items-center">
@@ -90,9 +118,12 @@ export default function Home() {
                       Spokojna głowa na urlopie – na całym świecie.
                     </CardContent>
                   </Card>
-                </li>
+                </motion.li>
 
-                <li className="h-full">
+                <motion.li
+                  className="h-full"
+                  variants={childVariants("y", "+")}
+                >
                   <Card className="h-full">
                     <CardHeader>
                       <CardTitle className="flex gap-3 items-center">
@@ -103,9 +134,12 @@ export default function Home() {
                       Najlepsze warunki bez ukrytych kosztów.
                     </CardContent>
                   </Card>
-                </li>
+                </motion.li>
 
-                <li className="h-full">
+                <motion.li
+                  className="h-full"
+                  variants={childVariants("y", "+")}
+                >
                   <Card className="h-full">
                     <CardHeader>
                       <CardTitle className="flex gap-3 items-center">
@@ -116,8 +150,8 @@ export default function Home() {
                       Ubezpieczenia grupowe, OC zawodowe, sprzęt.
                     </CardContent>
                   </Card>
-                </li>
-              </ol>
+                </motion.li>
+              </motion.ol>
             </InfoSection.Content>
           </InfoSection.Body>
         </InfoSection>
