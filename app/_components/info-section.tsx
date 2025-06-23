@@ -5,18 +5,20 @@ import Image, { ImageProps } from "next/image";
 type InfoSectionContentProps = {
   onClick?: () => void;
   children: ReactNode;
+  actionButtonText?: string;
 };
 
 const InfoSectionContent: FC<InfoSectionContentProps> = ({
   children,
   onClick,
+  actionButtonText = "Czytaj więcej",
 }) => {
   return (
     <article className="info-section-content flex flex-col sm:py-4 gap-4">
       <div className="flex gap-4">{children}</div>
       {onClick ? (
         <Button className="self-end" variant="outline" onClick={onClick}>
-          Czytaj więcej
+          {actionButtonText}
         </Button>
       ) : null}
     </article>
