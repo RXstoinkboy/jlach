@@ -10,7 +10,7 @@ export const Logo = () => {
       animate="visible"
       variants={childVariants("x")}
     >
-      Jerzy Łach
+      <a href="#">Jerzy Łach</a>
     </motion.div>
   );
 };
