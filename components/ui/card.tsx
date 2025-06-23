@@ -1,28 +1,13 @@
-"use client";
-
 import * as React from "react";
-import { type HTMLMotionProps, motion } from "motion/react";
 
 import { cn } from "@/lib/utils";
 
-function Card({ className, ...props }: HTMLMotionProps<"div">) {
+function Card({ className, ...props }: React.ComponentProps<"div">) {
   return (
-    <motion.div
-      initial={{
-        scale: 1,
-        filter: "brightness(1)",
-      }}
-      whileHover={{
-        scale: 1.01,
-        filter: "brightness(1.1)",
-      }}
-      transition={{
-        type: "tween",
-        duration: 0.2,
-      }}
+    <div
       data-slot="card"
       className={cn(
-        "bg-card text-card-foreground flex flex-col gap-6 rounded-xl border py-6 shadow-sm cursor-pointer",
+        "bg-card text-card-foreground flex flex-col gap-6 rounded-xl border py-6 shadow-sm",
         className
       )}
       {...props}

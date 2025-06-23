@@ -8,7 +8,12 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import FamilyImage from "@/public/family.jpg";
 import AgreementImage from "@/public/agreement.jpg";
 import { motion } from "motion/react";
-import { childVariants, STAGGER_CHILDREN_TIME } from "../_constants/animation";
+import {
+  childVariants,
+  DELAY_CHILDREN_TIME,
+  STAGGER_CHILDREN_TIME,
+} from "../_constants/animation";
+import { ActionCard } from "@/components/ui/action-card";
 
 export default function Home() {
   return (
@@ -66,6 +71,7 @@ export default function Home() {
                   visible: {
                     transition: {
                       staggerChildren: STAGGER_CHILDREN_TIME,
+                      delayChildren: DELAY_CHILDREN_TIME,
                     },
                   },
                 }}
@@ -75,7 +81,7 @@ export default function Home() {
                   className="h-full"
                   variants={childVariants("y", "+")}
                 >
-                  <Card className="h-full">
+                  <ActionCard className="h-full">
                     <CardHeader>
                       <CardTitle className="flex gap-3 items-center">
                         <HeartPulse className="w-7 h-7" /> Życie i zdrowie
@@ -85,14 +91,14 @@ export default function Home() {
                       Ochrona Twoich bliskich na wypadek nieprzewidzianych
                       zdarzeń.
                     </CardContent>
-                  </Card>
+                  </ActionCard>
                 </motion.li>
 
                 <motion.li
                   className="h-full"
                   variants={childVariants("y", "+")}
                 >
-                  <Card className="h-full">
+                  <ActionCard className="h-full">
                     <CardHeader>
                       <CardTitle className="flex gap-3 items-center">
                         <House className="w-7 h-7" /> Dom i mieszkanie
@@ -101,14 +107,14 @@ export default function Home() {
                     <CardContent>
                       Zabezpiecz swój majątek przed ogniem, zalaniem, kradzieżą.
                     </CardContent>
-                  </Card>
+                  </ActionCard>
                 </motion.li>
 
                 <motion.li
                   className="h-full"
                   variants={childVariants("y", "+")}
                 >
-                  <Card className="h-full">
+                  <ActionCard className="h-full">
                     <CardHeader>
                       <CardTitle className="flex gap-3 items-center">
                         <Plane className="w-7 h-7" /> Podróż
@@ -117,14 +123,14 @@ export default function Home() {
                     <CardContent>
                       Spokojna głowa na urlopie – na całym świecie.
                     </CardContent>
-                  </Card>
+                  </ActionCard>
                 </motion.li>
 
                 <motion.li
                   className="h-full"
                   variants={childVariants("y", "+")}
                 >
-                  <Card className="h-full">
+                  <ActionCard className="h-full">
                     <CardHeader>
                       <CardTitle className="flex gap-3 items-center">
                         <Car className="w-7 h-7" /> OC/AC komunikacyjne
@@ -133,14 +139,14 @@ export default function Home() {
                     <CardContent>
                       Najlepsze warunki bez ukrytych kosztów.
                     </CardContent>
-                  </Card>
+                  </ActionCard>
                 </motion.li>
 
                 <motion.li
                   className="h-full"
                   variants={childVariants("y", "+")}
                 >
-                  <Card className="h-full">
+                  <ActionCard className="h-full">
                     <CardHeader>
                       <CardTitle className="flex gap-3 items-center">
                         <Building2 className="w-7 h-7" /> Firmowe (opcjonalnie)
@@ -149,7 +155,7 @@ export default function Home() {
                     <CardContent>
                       Ubezpieczenia grupowe, OC zawodowe, sprzęt.
                     </CardContent>
-                  </Card>
+                  </ActionCard>
                 </motion.li>
               </motion.ol>
             </InfoSection.Content>
@@ -161,32 +167,57 @@ export default function Home() {
           <InfoSection.Subtitle>Prosty proces</InfoSection.Subtitle>
           <InfoSection.Body>
             <InfoSection.Content>
-              <ol className="flex flex-col gap-3 pl-10">
-                <li className="list-decimal font-semibold marker:text-4xl text-primary">
+              <motion.ol
+                initial="hidden"
+                whileInView="visible"
+                viewport={{
+                  once: true,
+                }}
+                variants={{
+                  hidden: {},
+                  visible: {
+                    transition: {
+                      staggerChildren: STAGGER_CHILDREN_TIME,
+                      delayChildren: DELAY_CHILDREN_TIME,
+                    },
+                  },
+                }}
+                className="flex flex-col gap-3 pl-10"
+              >
+                <motion.li
+                  className="list-decimal font-semibold marker:text-4xl text-primary"
+                  variants={childVariants("x")}
+                >
                   <h4 className="text-foreground text-lg">
                     Konsultacja i analiza potrzeb
                   </h4>
                   <p className="text-foreground font-normal mt-2">
                     Rozmawiamy – Ty mówisz, ja słucham. Poznaję Twoją sytuację.
                   </p>
-                </li>
-                <li className="list-decimal font-semibold marker:text-4xl text-primary">
+                </motion.li>
+                <motion.li
+                  className="list-decimal font-semibold marker:text-4xl text-primary"
+                  variants={childVariants("x")}
+                >
                   <h4 className="text-foreground text-lg">
                     Dobór i prezentacja ofert
                   </h4>
                   <p className="text-foreground font-normal mt-2">
                     Przygotowuję kilka opcji – Ty decydujesz, co najlepsze.
                   </p>
-                </li>
-                <li className="list-decimal font-semibold marker:text-4xl text-primary">
+                </motion.li>
+                <motion.li
+                  className="list-decimal font-semibold marker:text-4xl text-primary"
+                  variants={childVariants("x")}
+                >
                   <h4 className="text-foreground text-lg">
                     Finalizacja i wsparcie
                   </h4>
                   <p className="text-foreground font-normal mt-2">
                     Pomagam w formalnościach, a później jestem do dyspozycji.
                   </p>
-                </li>
-              </ol>
+                </motion.li>
+              </motion.ol>
             </InfoSection.Content>
             <InfoSection.Image src={AgreementImage} alt="Signing agreement" />
           </InfoSection.Body>
