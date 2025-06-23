@@ -1,4 +1,4 @@
-import { childVariants } from "@/app/_constants/animation";
+import { childVariants } from "@/lib/constants/animation";
 import { motion } from "motion/react";
 
 export const Logo = () => {

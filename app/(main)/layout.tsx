@@ -1,12 +1,12 @@
 "use client";
 
-import { Navigation } from "../(components)/navigation";
-import { ContactForm } from "../(components)/contact-form/contact-form";
-import { ContactBar } from "../(components)/contact";
-import { Copyright } from "../(components)/copyright";
-import { Logo } from "../(components)/logo";
+import { Navigation } from "../_components/navigation";
+import { ContactForm } from "../_components/contact-form/contact-form";
+import { ContactBar } from "../_components/contact";
+import { Copyright } from "../_components/copyright";
+import { Logo } from "../_components/logo";
 import { useEffect, useRef, useState } from "react";
-import { FocusContext } from "../(components)/contact-form/focus-context";
+import { FocusContext } from "../_components/contact-form/focus-context";
 import { cn } from "@/lib/utils";
 
 export default function RootLayout({

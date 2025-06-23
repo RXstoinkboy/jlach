@@ -15,7 +15,7 @@ import { motion, Variants } from "motion/react";
 import {
   childVariants,
   STAGGER_CHILDREN_TIME,
-} from "@/app/_constants/animation";
+} from "@/lib/constants/animation";
 
 const containerVariants: Variants = {
   hidden: {},

@@ -1,7 +1,7 @@
 "use client";
 
-import { Hero } from "../(hero)/hero";
-import { InfoSection } from "../(components)/info-section";
+import { Hero } from "../_hero/hero";
+import { InfoSection } from "../_components/info-section";
 import { Building2, Car, Check, HeartPulse, House, Plane } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -12,7 +12,7 @@ import {
   childVariants,
   DELAY_CHILDREN_TIME,
   STAGGER_CHILDREN_TIME,
-} from "../_constants/animation";
+} from "../../lib/constants/animation";
 import { ActionCard } from "@/components/ui/action-card";
 
 export default function Home() {

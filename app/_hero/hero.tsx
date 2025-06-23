@@ -1,14 +1,14 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { useFocus } from "../(components)/contact-form/focus-context";
+import { useFocus } from "../_components/contact-form/focus-context";
 import { HeroImage } from "./_components/hero-image";
 import { motion, Variants } from "motion/react";
 import {
   childVariants,
   DELAY_CHILDREN_TIME,
   STAGGER_CHILDREN_TIME,
-} from "../_constants/animation";
+} from "../../lib/constants/animation";
 
 const containerVariants: Variants = {
   hidden: {
