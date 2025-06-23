@@ -10,9 +10,6 @@ export const childVariants = (axis: "x" | 'y', direction: '+' | '-' = '-'): Vari
       [axis]: 0,
       transition: {
         type: "spring",
-        stiffness: 100, 
-        damping: 10,
-        mass: 1.2,
       },
     } as Variant,
   });
