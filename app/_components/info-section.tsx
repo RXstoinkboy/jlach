@@ -12,9 +12,13 @@ const InfoSectionContent: FC<InfoSectionContentProps> = ({
   onClick,
 }) => {
   return (
-    <article className="info-section-content flex flex-col sm:py-4">
+    <article className="info-section-content flex flex-col sm:py-4 gap-4">
       <div className="flex gap-4">{children}</div>
-      {onClick ? <Button onClick={onClick}>Read more</Button> : null}
+      {onClick ? (
+        <Button className="self-end" variant="outline" onClick={onClick}>
+          Czytaj więcej
+        </Button>
+      ) : null}
     </article>
   );
 };

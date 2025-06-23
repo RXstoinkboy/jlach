@@ -14,6 +14,7 @@ import {
   STAGGER_CHILDREN_TIME,
 } from "../../lib/constants/animation";
 import { ActionCard } from "@/components/ui/action-card";
+import { redirect } from "next/navigation";
 
 export default function Home() {
   return (
@@ -229,7 +230,7 @@ export default function Home() {
             Cześć, jestem Jerzy – agent, który naprawdę słucha.
           </InfoSection.Subtitle>
           <InfoSection.Body>
-            <InfoSection.Content>
+            <InfoSection.Content onClick={() => redirect("/about")}>
               <p>
                 Od ponad 20 lat pomagam ludziom i rodzinom czuć się
                 bezpieczniej. Działam uczciwie, tłumaczę w prostych słowach i
