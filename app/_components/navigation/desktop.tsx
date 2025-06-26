@@ -16,6 +16,7 @@ import {
   childVariants,
   STAGGER_CHILDREN_TIME,
 } from "@/lib/constants/animation";
+import Link from "next/link";
 
 const containerVariants: Variants = {
   hidden: {},
@@ -51,7 +52,7 @@ export const Desktop = () => {
                   "text-md bg-transparent"
                 )}
               >
-                <a href={item.href}>{item.label}</a>
+                <Link href={item.href}>{item.label}</Link>
               </NavigationMenuLink>
             </MotionNavItem>
           ))}

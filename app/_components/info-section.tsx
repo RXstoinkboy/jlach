@@ -1,9 +1,11 @@
 import { Button } from "@/components/ui/button";
 import type { FC, ReactNode } from "react";
 import Image, { ImageProps } from "next/image";
+import { cn } from "@/lib/utils";
 
 type InfoSectionContentProps = {
-  onClick?: () => void;
+  onClick?: React.ComponentProps<"button">["onClick"];
+  button?: ReactNode;
   children: ReactNode;
   actionButtonText?: string;
 };
@@ -76,6 +78,7 @@ const Body: FC<InfoSectionBodyProps> = ({ children }) => {
 type InfoSectionProps = {
   children: ReactNode;
   id?: string;
+  className?: string;
 };
 
 export type InfoSectionComponent = FC<InfoSectionProps> & {
@@ -86,9 +89,13 @@ export type InfoSectionComponent = FC<InfoSectionProps> & {
   Subtitle: FC<SubititleProps>;
 };
 
-export const InfoSection: InfoSectionComponent = ({ children, id }) => {
+export const InfoSection: InfoSectionComponent = ({
+  children,
+  id,
+  className,
+}) => {
   return (
-    <section className="flex flex-col gap-6 p-4" id={id}>
+    <section className={cn("flex flex-col gap-6 p-4", className)} id={id}>
       {children}
     </section>
   );

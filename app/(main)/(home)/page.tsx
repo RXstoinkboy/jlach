@@ -1,10 +1,10 @@
 "use client";
 
-import { Hero } from "../_hero/hero";
-import { InfoSection } from "../_components/info-section";
+import { Hero } from "../../_hero/hero";
+import { InfoSection } from "../../_components/info-section";
 import { Building2, Car, Check, HeartPulse, House, Plane } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import FamilyImage from "@/public/family.jpg";
 import AgreementImage from "@/public/agreement.jpg";
 import { motion } from "motion/react";
@@ -12,11 +12,13 @@ import {
   childVariants,
   DELAY_CHILDREN_TIME,
   STAGGER_CHILDREN_TIME,
-} from "../../lib/constants/animation";
+} from "../../../lib/constants/animation";
 import { ActionCard } from "@/components/ui/action-card";
-import { redirect } from "next/navigation";
+import { useRouter } from "next/navigation";
 
 export default function Home() {
+  const router = useRouter();
+
   return (
     <>
       <Hero />
@@ -230,7 +232,7 @@ export default function Home() {
             Cześć, jestem Jerzy – agent, który naprawdę słucha.
           </InfoSection.Subtitle>
           <InfoSection.Body>
-            <InfoSection.Content onClick={() => redirect("/about")}>
+            <InfoSection.Content onClick={() => router.push(`/about`)}>
               <p>
                 Od ponad 20 lat pomagam ludziom i rodzinom czuć się
                 bezpieczniej. Działam uczciwie, tłumaczę w prostych słowach i
