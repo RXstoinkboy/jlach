@@ -15,6 +15,7 @@ import {
 } from "../../../lib/constants/animation";
 import { ActionCard } from "@/components/ui/action-card";
 import { useRouter } from "next/navigation";
+import { ResponsiveDialog } from "@/components/ui/responvie-dialog";
 
 export default function Home() {
   const router = useRouter();
@@ -84,81 +85,164 @@ export default function Home() {
                   className="h-full"
                   variants={childVariants("y", "+")}
                 >
-                  <ActionCard className="h-full">
-                    <CardHeader>
-                      <CardTitle className="flex gap-3 items-center">
-                        <HeartPulse className="w-7 h-7" /> Życie i zdrowie
-                      </CardTitle>
-                    </CardHeader>
-                    <CardContent>
-                      Ochrona Twoich bliskich na wypadek nieprzewidzianych
-                      zdarzeń.
-                    </CardContent>
-                  </ActionCard>
+                  <ResponsiveDialog
+                    title="Życie i zdrowie"
+                    description="Zadbaj o bezpieczeństwo swoje i najbliższych."
+                    content={
+                      <div>
+                        <p>
+                          Nieprzewidziane sytuacje mogą zmienić wszystko –
+                          zadbaj o to, by Twoi bliscy byli chronieni finansowo w
+                          najtrudniejszych chwilach. Ubezpieczenia na życie i
+                          zdrowie to wsparcie na wypadek choroby, wypadku lub
+                          śmierci. Pomagam dobrać rozwiązanie dopasowane do
+                          Twojej sytuacji rodzinnej i zawodowej.
+                        </p>
+                      </div>
+                    }
+                  >
+                    <ActionCard className="h-full">
+                      <CardHeader>
+                        <CardTitle className="flex gap-3 items-center">
+                          <HeartPulse className="w-7 h-7" /> Życie i zdrowie
+                        </CardTitle>
+                      </CardHeader>
+                      <CardContent>
+                        Ochrona Twoich bliskich na wypadek nieprzewidzianych
+                        zdarzeń.
+                      </CardContent>
+                    </ActionCard>
+                  </ResponsiveDialog>
                 </motion.li>
 
                 <motion.li
                   className="h-full"
                   variants={childVariants("y", "+")}
                 >
-                  <ActionCard className="h-full">
-                    <CardHeader>
-                      <CardTitle className="flex gap-3 items-center">
-                        <House className="w-7 h-7" /> Dom i mieszkanie
-                      </CardTitle>
-                    </CardHeader>
-                    <CardContent>
-                      Zabezpiecz swój majątek przed ogniem, zalaniem, kradzieżą.
-                    </CardContent>
-                  </ActionCard>
+                  <ResponsiveDialog
+                    title="Dom i mieszkanie"
+                    description="Twój majątek zasługuje na solidną ochronę."
+                    content={
+                      <div>
+                        <p>
+                          Ubezpieczenie nieruchomości to nie tylko ochrona murów
+                          – to spokój ducha. Pożar, zalanie czy włamanie może
+                          przydarzyć się każdemu. Oferuję polisy chroniące
+                          zarówno domy, mieszkania, jak i elementy wyposażenia,
+                          a także OC w życiu prywatnym.
+                        </p>
+                      </div>
+                    }
+                  >
+                    <ActionCard className="h-full">
+                      <CardHeader>
+                        <CardTitle className="flex gap-3 items-center">
+                          <House className="w-7 h-7" /> Dom i mieszkanie
+                        </CardTitle>
+                      </CardHeader>
+                      <CardContent>
+                        Zabezpiecz swój majątek przed ogniem, zalaniem,
+                        kradzieżą.
+                      </CardContent>
+                    </ActionCard>
+                  </ResponsiveDialog>
                 </motion.li>
 
                 <motion.li
                   className="h-full"
                   variants={childVariants("y", "+")}
                 >
-                  <ActionCard className="h-full">
-                    <CardHeader>
-                      <CardTitle className="flex gap-3 items-center">
-                        <Plane className="w-7 h-7" /> Podróż
-                      </CardTitle>
-                    </CardHeader>
-                    <CardContent>
-                      Spokojna głowa na urlopie – na całym świecie.
-                    </CardContent>
-                  </ActionCard>
+                  <ResponsiveDialog
+                    title="Podróż"
+                    description="Bezpieczna podróż to udany wypoczynek."
+                    content={
+                      <div>
+                        <p>
+                          Nieważne, czy lecisz na wakacje, wyjeżdżasz służbowo
+                          czy planujesz aktywny wypoczynek – odpowiednie
+                          ubezpieczenie podróżne zapewni Ci pomoc medyczną,
+                          wsparcie w razie zagubionego bagażu czy odwołanego
+                          lotu. Działam szybko – ubezpieczenie nawet tego samego
+                          dnia.
+                        </p>
+                      </div>
+                    }
+                  >
+                    <ActionCard className="h-full">
+                      <CardHeader>
+                        <CardTitle className="flex gap-3 items-center">
+                          <Plane className="w-7 h-7" /> Podróż
+                        </CardTitle>
+                      </CardHeader>
+                      <CardContent>
+                        Spokojna głowa na urlopie – na całym świecie.
+                      </CardContent>
+                    </ActionCard>
+                  </ResponsiveDialog>
                 </motion.li>
 
                 <motion.li
                   className="h-full"
                   variants={childVariants("y", "+")}
                 >
-                  <ActionCard className="h-full">
-                    <CardHeader>
-                      <CardTitle className="flex gap-3 items-center">
-                        <Car className="w-7 h-7" /> OC/AC komunikacyjne
-                      </CardTitle>
-                    </CardHeader>
-                    <CardContent>
-                      Najlepsze warunki bez ukrytych kosztów.
-                    </CardContent>
-                  </ActionCard>
+                  <ResponsiveDialog
+                    title="OC/AC komunikacyjne"
+                    description="Pełna ochrona na drodze – bez przepłacania"
+                    content={
+                      <div>
+                        <p>
+                          Ubezpieczenie OC to obowiązek, ale warto zadbać także
+                          o własne auto. Pomagam znaleźć najlepszą ofertę OC,
+                          AC, assistance czy NNW – bez ukrytych kosztów, z
+                          przejrzystymi warunkami i dopasowaną sumą
+                          ubezpieczenia.
+                        </p>
+                      </div>
+                    }
+                  >
+                    <ActionCard className="h-full">
+                      <CardHeader>
+                        <CardTitle className="flex gap-3 items-center">
+                          <Car className="w-7 h-7" /> OC/AC komunikacyjne
+                        </CardTitle>
+                      </CardHeader>
+                      <CardContent>
+                        Najlepsze warunki bez ukrytych kosztów.
+                      </CardContent>
+                    </ActionCard>
+                  </ResponsiveDialog>
                 </motion.li>
 
                 <motion.li
                   className="h-full"
                   variants={childVariants("y", "+")}
                 >
-                  <ActionCard className="h-full">
-                    <CardHeader>
-                      <CardTitle className="flex gap-3 items-center">
-                        <Building2 className="w-7 h-7" /> Firmowe (opcjonalnie)
-                      </CardTitle>
-                    </CardHeader>
-                    <CardContent>
-                      Ubezpieczenia grupowe, OC zawodowe, sprzęt.
-                    </CardContent>
-                  </ActionCard>
+                  <ResponsiveDialog
+                    title="Firmowe
+                          (opcjonalnie)"
+                    description="Ubezpieczenia grupowe, OC zawodowe, sprzęt."
+                    content={
+                      <p>
+                        Każda firma jest inna – dlatego oferuję dopasowane
+                        rozwiązania: ubezpieczenia grupowe dla pracowników, OC
+                        zawodowe dla wolnych zawodów czy ochronę sprzętu
+                        firmowego. Niezależnie od branży, znajdziemy polisę,
+                        która zabezpieczy Twój biznes.
+                      </p>
+                    }
+                  >
+                    <ActionCard className="h-full">
+                      <CardHeader>
+                        <CardTitle className="flex gap-3 items-center">
+                          <Building2 className="w-7 h-7" /> Firmowe
+                          (opcjonalnie)
+                        </CardTitle>
+                      </CardHeader>
+                      <CardContent>
+                        Ubezpieczenia grupowe, OC zawodowe, sprzęt.
+                      </CardContent>
+                    </ActionCard>
+                  </ResponsiveDialog>
                 </motion.li>
               </motion.ol>
             </InfoSection.Content>

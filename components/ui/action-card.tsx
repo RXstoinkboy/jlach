@@ -9,6 +9,7 @@ const MotionCard = motion(Card);
 export function ActionCard({ className, ...props }: HTMLMotionProps<"div">) {
   return (
     <MotionCard
+      tabIndex={1}
       initial={{
         scale: 1,
         filter: "brightness(1)",
