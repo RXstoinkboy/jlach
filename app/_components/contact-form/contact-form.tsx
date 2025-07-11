@@ -12,8 +12,9 @@ import {
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { RefObject } from "react";
-import { SubmitHandler, useForm } from "react-hook-form";
+import { useState, type RefObject } from "react";
+import { type SubmitHandler, useForm } from "react-hook-form";
+import { toast } from "sonner";
 import { z } from "zod";
 
 const formSchema = z.object({
@@ -27,6 +28,8 @@ type ContactFormProps = {
 };
 
 export const ContactForm = ({ nameInputRef }: ContactFormProps) => {
+  const [isSending, setIsSending] = useState(false);
+
   const form = useForm({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -36,8 +39,23 @@ export const ContactForm = ({ nameInputRef }: ContactFormProps) => {
     },
   });
 
-  const onSubmit: SubmitHandler<z.infer<typeof formSchema>> = (data) => {
-    console.log(data);
+  const onSubmit: SubmitHandler<z.infer<typeof formSchema>> = async (data) => {
+    try {
+      setIsSending(true);
+
+      await fetch("/contact", {
+        method: "POST",
+        body: JSON.stringify(data),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+      toast.success("Wiadomość wysłana");
+    } catch (error) {
+      toast.error("Nie udało się wysłać wiadomości");
+    } finally {
+      setIsSending(false);
+    }
   };
 
   return (
@@ -45,10 +63,7 @@ export const ContactForm = ({ nameInputRef }: ContactFormProps) => {
       <Card className="min-w-full lg:min-w-md">
         <Form {...form}>
           <CardContent>
-            <form
-              className="flex flex-col gap-4 tracking-wide"
-              onSubmit={form.handleSubmit(onSubmit)}
-            >
+            <form className="flex flex-col gap-4 tracking-wide">
               <FormField
                 control={form.control}
                 name="name"
@@ -72,7 +87,7 @@ export const ContactForm = ({ nameInputRef }: ContactFormProps) => {
                   <FormItem>
                     <FormLabel>Email:</FormLabel>
                     <FormControl>
-                      <Input {...field} placeholder="jan.nowak@gmail.com" />
+                      <Input {...field} placeholder="jan.nowak@mymail.com" />
                     </FormControl>
                   </FormItem>
                 )}
@@ -96,7 +111,11 @@ export const ContactForm = ({ nameInputRef }: ContactFormProps) => {
             </form>
           </CardContent>
           <CardFooter>
-            <Button className="w-full" type="submit">
+            <Button
+              className="w-full"
+              disabled={isSending}
+              onClick={form.handleSubmit(onSubmit)}
+            >
               Wyślij wiadomość
             </Button>
           </CardFooter>
