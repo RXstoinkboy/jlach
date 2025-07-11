@@ -22,6 +22,7 @@ export const Mobile = () => {
       onOpenChange={setIsOpen}
       direction="right"
       disablePreventScroll
+      noBodyStyles
     >
       <DrawerTrigger asChild>
         <Button

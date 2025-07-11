@@ -1,20 +1,28 @@
 import { Button } from "@/components/ui/button";
 import type { FC, ReactNode } from "react";
 import Image, { ImageProps } from "next/image";
+import { cn } from "@/lib/utils";
 
 type InfoSectionContentProps = {
-  onClick?: () => void;
+  onClick?: React.ComponentProps<"button">["onClick"];
+  button?: ReactNode;
   children: ReactNode;
+  actionButtonText?: string;
 };
 
 const InfoSectionContent: FC<InfoSectionContentProps> = ({
   children,
   onClick,
+  actionButtonText = "Czytaj więcej",
 }) => {
   return (
-    <article className="info-section-content flex flex-col sm:py-4">
+    <article className="info-section-content flex flex-col sm:py-4 gap-4">
       <div className="flex gap-4">{children}</div>
-      {onClick ? <Button onClick={onClick}>Read more</Button> : null}
+      {onClick ? (
+        <Button className="self-end" variant="outline" onClick={onClick}>
+          {actionButtonText}
+        </Button>
+      ) : null}
     </article>
   );
 };
@@ -70,6 +78,7 @@ const Body: FC<InfoSectionBodyProps> = ({ children }) => {
 type InfoSectionProps = {
   children: ReactNode;
   id?: string;
+  className?: string;
 };
 
 export type InfoSectionComponent = FC<InfoSectionProps> & {
@@ -80,9 +89,13 @@ export type InfoSectionComponent = FC<InfoSectionProps> & {
   Subtitle: FC<SubititleProps>;
 };
 
-export const InfoSection: InfoSectionComponent = ({ children, id }) => {
+export const InfoSection: InfoSectionComponent = ({
+  children,
+  id,
+  className,
+}) => {
   return (
-    <section className="flex flex-col gap-6 p-4" id={id}>
+    <section className={cn("flex flex-col gap-6 p-4", className)} id={id}>
       {children}
     </section>
   );
