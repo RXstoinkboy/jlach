@@ -51,7 +51,7 @@ export const ContactForm = ({ nameInputRef }: ContactFormProps) => {
         },
       });
       toast.success("Wiadomość wysłana");
-    } catch (error) {
+    } catch {
       toast.error("Nie udało się wysłać wiadomości");
     } finally {
       setIsSending(false);
